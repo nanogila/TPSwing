@@ -1,4 +1,4 @@
-package GUI;
+package view;
 import javax.swing.*;
 public class prueba {
     public static void createandShowGUI() {
