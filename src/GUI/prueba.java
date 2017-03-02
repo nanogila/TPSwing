@@ -1,3 +1,4 @@
+package GUI;
 import javax.swing.*;
 public class prueba {
     public static void createandShowGUI() {
@@ -20,7 +21,5 @@ public class prueba {
         mainWindow.setVisible(true);
 
     }
-    public static void main(String[] args){
-        createandShowGUI();
-    }
+
 }
