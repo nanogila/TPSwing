@@ -9,8 +9,8 @@ import view.*;
 public class MainController {
 	private Model actions;
 	private MainWindow display;
-public MainController() {
-	actions = new Model();
+public MainController(Model aModel) {
+	actions =aModel;
 	display = new MainWindow();
 	display.addExitListener(new ExitListener());
 	display.addSettingsListener(new SettingsListener());

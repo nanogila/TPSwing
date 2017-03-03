@@ -30,6 +30,8 @@ JCheckBox antialiasingCheck;
 JButton backButton;
 	private JPanel contentPane;
 	public SettingsWindow() {
+		setResizable(false);
+		setTitle("Settings");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		setLocationRelativeTo(null);
@@ -66,8 +68,6 @@ JButton backButton;
 		ButtonGroup soundSettings = new ButtonGroup();
 		soundSettings.add(soundOff);
 		soundSettings.add(soundOn);
-		musicOn.setSelected(true);
-		soundOn.setSelected(true);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -122,6 +122,14 @@ JButton backButton;
 		);
 		contentPane.setLayout(gl_contentPane);
 		pack();
+	}
+	public void setSettingsInitialState(Boolean musicState, Boolean soundState, Boolean shadowState, Boolean antialiasingState) {
+		musicOn.setSelected(musicState);
+		soundOn.setSelected(soundState);
+		musicOff.setSelected(!musicState);
+		soundOff.setSelected(!soundState);
+		shadowsCheck.setSelected(shadowState);
+		antialiasingCheck.setSelected(antialiasingState);
 	}
 	public void setMusicOnRadioBtnActions(ActionListener musicOnAction) {
 		musicOn.addActionListener(musicOnAction);
