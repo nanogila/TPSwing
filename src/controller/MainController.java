@@ -24,12 +24,11 @@ class ExitListener implements ActionListener{
 		System.exit(0);
 	}
 }
-class SettingsListener implements ActionListener{
+class SettingsListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		SettingsWindow settings = new SettingsWindow();
-		settings.setVisible(true);
-		display.setVisible(false);
+		SettingsController settings = new SettingsController(actions);
+		display.dispose();
 	}
 	
 }

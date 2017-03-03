@@ -6,10 +6,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusListener;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
@@ -17,7 +21,13 @@ import javax.swing.JCheckBox;
 import javax.swing.JButton;
 
 public class SettingsWindow extends JFrame {
-
+JRadioButton soundOn;
+JRadioButton soundOff;
+JRadioButton musicOn;
+JRadioButton musicOff;
+JCheckBox shadowsCheck;
+JCheckBox antialiasingCheck;
+JButton backButton;
 	private JPanel contentPane;
 	public SettingsWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,19 +47,27 @@ public class SettingsWindow extends JFrame {
 		
 		JLabel lblGraphics = new JLabel("Graphics: ");
 		
-		JRadioButton soundOn = new JRadioButton("on");
+		soundOn = new JRadioButton("on");
 		
-		JRadioButton soundOff = new JRadioButton("off");
+		soundOff = new JRadioButton("off");
 		
-		JRadioButton musicOn = new JRadioButton("on");
+		musicOn = new JRadioButton("on");
 		
-		JRadioButton musicOff = new JRadioButton("off");
+		musicOff = new JRadioButton("off");
 		
-		JCheckBox shadowsCheck = new JCheckBox("Shadows");
+		shadowsCheck = new JCheckBox("Shadows");
 		
-		JCheckBox antialiasingCheck = new JCheckBox("Anti-aliasing");
+		antialiasingCheck = new JCheckBox("Anti-aliasing");
 		
-		JButton backButton = new JButton("Back");
+		backButton = new JButton("Back");
+		ButtonGroup musicSettings = new ButtonGroup();
+		musicSettings.add(musicOff);
+		musicSettings.add(musicOn);
+		ButtonGroup soundSettings = new ButtonGroup();
+		soundSettings.add(soundOff);
+		soundSettings.add(soundOn);
+		musicOn.setSelected(true);
+		soundOn.setSelected(true);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -104,5 +122,26 @@ public class SettingsWindow extends JFrame {
 		);
 		contentPane.setLayout(gl_contentPane);
 		pack();
+	}
+	public void setMusicOnRadioBtnActions(ActionListener musicOnAction) {
+		musicOn.addActionListener(musicOnAction);
+	}
+	public void setMusicOffRadioBtnActions(ActionListener musicOffAction) {
+		musicOff.addActionListener(musicOffAction);
+	}
+	public void setSoundOnRadioBtnActions(ActionListener soundOnAction) {
+		soundOn.addActionListener(soundOnAction);
+	}
+	public void setSoundOffRadioBtnActions(ActionListener soundOffAction) {
+		soundOff.addActionListener(soundOffAction);
+	}
+	public void setAntialiasingCheckActions(ActionListener antialiasingAction) {
+		antialiasingCheck.addActionListener(antialiasingAction);
+	}
+	public void setShadowsCheckActions(ActionListener shadowsAction) {
+		shadowsCheck.addActionListener(shadowsAction);
+	}
+	public void setBackButtonActions(ActionListener backButtonAction) {
+		backButton.addActionListener(backButtonAction);
 	}
 }
