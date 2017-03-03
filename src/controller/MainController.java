@@ -27,7 +27,7 @@ class ExitListener implements ActionListener{
 class SettingsListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		SettingsController settings = new SettingsController(actions);
+		new SettingsController(actions);
 		display.dispose();
 	}
 	
