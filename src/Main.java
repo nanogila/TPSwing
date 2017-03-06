@@ -2,7 +2,6 @@ import javax.swing.*;
 
 import controller.MainController;
 import model.Model;
-import view.*;
 public class Main {
     public static void main(String[] args){
 		try {

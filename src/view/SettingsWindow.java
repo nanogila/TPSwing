@@ -36,11 +36,10 @@ JButton backButton;
 		setBounds(100, 100, 450, 300);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 10));
 		setContentPane(contentPane);
 		
-		JLabel lblSettings = new JLabel("Settings");
-		lblSettings.setHorizontalAlignment(SwingConstants.CENTER);
+		JLabel lblSettings = new JLabel("Settings", SwingConstants.CENTER);
 		lblSettings.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		
 		JLabel lblSound = new JLabel("Sound: ");
@@ -62,6 +61,7 @@ JButton backButton;
 		antialiasingCheck = new JCheckBox("Anti-aliasing");
 		
 		backButton = new JButton("Back");
+		
 		ButtonGroup musicSettings = new ButtonGroup();
 		musicSettings.add(musicOff);
 		musicSettings.add(musicOn);
@@ -74,33 +74,37 @@ JButton backButton;
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(10)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblSettings, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblSound)
-							.addGap(18)
-							.addComponent(soundOn)
-							.addGap(2)
-							.addComponent(soundOff))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(lblMusic)
-							.addGap(22)
+							.addGap(60)
 							.addComponent(musicOn)
 							.addGap(2)
 							.addComponent(musicOff))
 						.addComponent(lblGraphics)
 						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblSound)
+							.addPreferredGap(ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+							.addComponent(soundOn)
+							.addGap(2)
+							.addComponent(soundOff)
+							.addContainerGap())
+						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(shadowsCheck)
 							.addComponent(antialiasingCheck))
-						.addComponent(backButton, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)))
+						.addComponent(lblSettings, GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)))
+				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addContainerGap(43, Short.MAX_VALUE)
+					.addComponent(backButton, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
+					.addGap(32))
 		);
 		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.CENTER)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addComponent(lblSettings)
-					.addGap(2)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(4)
+							.addGap(6)
 							.addComponent(lblSound))
 						.addComponent(soundOn)
 						.addComponent(soundOff))
@@ -117,8 +121,9 @@ JButton backButton;
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(shadowsCheck)
 						.addComponent(antialiasingCheck))
-					.addGap(7)
-					.addComponent(backButton))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(backButton)
+					.addGap(11))
 		);
 		contentPane.setLayout(gl_contentPane);
 		pack();

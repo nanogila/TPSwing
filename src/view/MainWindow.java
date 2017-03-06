@@ -14,10 +14,10 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class MainWindow extends JFrame{
 	private JPanel contentPane;
-	private MainController actionListener;
 	JButton startGameButton;
 	JButton settingsButton;
 	JButton exitButton;
@@ -44,29 +44,34 @@ public class MainWindow extends JFrame{
 		exitButton = new JButton("Exit");
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.CENTER)
 				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(12)
+					.addComponent(titleLabel))
+				.addComponent(creatorsLabel, GroupLayout.PREFERRED_SIZE, 252, GroupLayout.PREFERRED_SIZE)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(12)
+					.addComponent(startGameButton, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(12)
+					.addComponent(settingsButton, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(12)
+					.addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.CENTER)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addComponent(titleLabel)
+					.addGap(18)
+					.addComponent(creatorsLabel)
+					.addGap(18)
 					.addComponent(startGameButton)
 					.addGap(6)
 					.addComponent(settingsButton)
 					.addGap(6)
-					.addComponent(exitButton))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(titleLabel))
-				.addComponent(creatorsLabel, GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(titleLabel)
-					.addGap(17)
-					.addComponent(creatorsLabel)
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(startGameButton)
-						.addComponent(settingsButton)
-						.addComponent(exitButton)))
+					.addComponent(exitButton)
+					.addGap(12))
 		);
 		contentPane.setLayout(gl_contentPane);
 		pack();

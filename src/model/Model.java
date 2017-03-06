@@ -45,10 +45,8 @@ public Boolean toggleMusic() {
 	return music;
 }
 private void printSettings() {
-	/*
-	 * System.out.print("\033[H\033[2J");
-	 * System.out.flush();
-	 */
+	System.out.println("\033[H\033[2J"); //escape characters to clear console
+ 	System.out.flush();
 	if (sound) System.out.println("Sound: On");
 	if (!sound) System.out.println("Sound: Off");
 	if (music) System.out.println("Music: On");
