@@ -1,24 +1,18 @@
 package view;
-
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.ButtonGroup;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusListener;
-
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 
 public class SettingsWindow extends JFrame {
 JRadioButton soundOn;
@@ -33,99 +27,118 @@ JButton backButton;
 		setResizable(false);
 		setTitle("Settings");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 398, 297);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 10));
+		contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
 		setContentPane(contentPane);
+		
+		ButtonGroup musicSettings = new ButtonGroup();
+		ButtonGroup soundSettings = new ButtonGroup();
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+		gbl_contentPane.columnWidths = new int[]{69, 0, 37, 0};
+		gbl_contentPane.rowHeights = new int[]{24, 23, 23, 14, 23, 23, 0};
+		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		contentPane.setLayout(gbl_contentPane);
 		
 		JLabel lblSettings = new JLabel("Settings", SwingConstants.CENTER);
 		lblSettings.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		GridBagConstraints gbc_lblSettings = new GridBagConstraints();
+		gbc_lblSettings.anchor = GridBagConstraints.NORTH;
+		gbc_lblSettings.fill = GridBagConstraints.HORIZONTAL;
+		gbc_lblSettings.insets = new Insets(0, 0, 5, 0);
+		gbc_lblSettings.gridwidth = 3;
+		gbc_lblSettings.gridx = 0;
+		gbc_lblSettings.gridy = 0;
+		contentPane.add(lblSettings, gbc_lblSettings);
 		
 		JLabel lblSound = new JLabel("Sound: ");
-		
-		JLabel lblMusic = new JLabel("Music: ");
-		
-		JLabel lblGraphics = new JLabel("Graphics: ");
+		GridBagConstraints gbc_lblSound = new GridBagConstraints();
+		gbc_lblSound.anchor = GridBagConstraints.WEST;
+		gbc_lblSound.insets = new Insets(0, 0, 5, 5);
+		gbc_lblSound.gridx = 0;
+		gbc_lblSound.gridy = 1;
+		contentPane.add(lblSound, gbc_lblSound);
 		
 		soundOn = new JRadioButton("on");
+		soundSettings.add(soundOn);
+		GridBagConstraints gbc_soundOn = new GridBagConstraints();
+		gbc_soundOn.anchor = GridBagConstraints.NORTHEAST;
+		gbc_soundOn.insets = new Insets(0, 0, 5, 5);
+		gbc_soundOn.gridx = 1;
+		gbc_soundOn.gridy = 1;
+		contentPane.add(soundOn, gbc_soundOn);
 		
 		soundOff = new JRadioButton("off");
+		soundSettings.add(soundOff);
+		GridBagConstraints gbc_soundOff = new GridBagConstraints();
+		gbc_soundOff.anchor = GridBagConstraints.NORTHWEST;
+		gbc_soundOff.insets = new Insets(0, 0, 5, 0);
+		gbc_soundOff.gridx = 2;
+		gbc_soundOff.gridy = 1;
+		contentPane.add(soundOff, gbc_soundOff);
+		
+		JLabel lblMusic = new JLabel("Music: ");
+		GridBagConstraints gbc_lblMusic = new GridBagConstraints();
+		gbc_lblMusic.anchor = GridBagConstraints.WEST;
+		gbc_lblMusic.insets = new Insets(0, 0, 5, 5);
+		gbc_lblMusic.gridx = 0;
+		gbc_lblMusic.gridy = 2;
+		contentPane.add(lblMusic, gbc_lblMusic);
 		
 		musicOn = new JRadioButton("on");
+		musicSettings.add(musicOn);
+		GridBagConstraints gbc_musicOn = new GridBagConstraints();
+		gbc_musicOn.anchor = GridBagConstraints.NORTHEAST;
+		gbc_musicOn.insets = new Insets(0, 0, 5, 5);
+		gbc_musicOn.gridx = 1;
+		gbc_musicOn.gridy = 2;
+		contentPane.add(musicOn, gbc_musicOn);
 		
 		musicOff = new JRadioButton("off");
+		musicSettings.add(musicOff);
+		GridBagConstraints gbc_musicOff = new GridBagConstraints();
+		gbc_musicOff.anchor = GridBagConstraints.NORTHWEST;
+		gbc_musicOff.insets = new Insets(0, 0, 5, 0);
+		gbc_musicOff.gridx = 2;
+		gbc_musicOff.gridy = 2;
+		contentPane.add(musicOff, gbc_musicOff);
+		
+		JLabel lblGraphics = new JLabel("Graphics: ");
+		GridBagConstraints gbc_lblGraphics = new GridBagConstraints();
+		gbc_lblGraphics.anchor = GridBagConstraints.NORTHWEST;
+		gbc_lblGraphics.insets = new Insets(0, 0, 5, 5);
+		gbc_lblGraphics.gridx = 0;
+		gbc_lblGraphics.gridy = 3;
+		contentPane.add(lblGraphics, gbc_lblGraphics);
 		
 		shadowsCheck = new JCheckBox("Shadows");
+		GridBagConstraints gbc_shadowsCheck = new GridBagConstraints();
+		gbc_shadowsCheck.anchor = GridBagConstraints.NORTHWEST;
+		gbc_shadowsCheck.insets = new Insets(0, 0, 5, 5);
+		gbc_shadowsCheck.gridx = 0;
+		gbc_shadowsCheck.gridy = 4;
+		contentPane.add(shadowsCheck, gbc_shadowsCheck);
 		
 		antialiasingCheck = new JCheckBox("Anti-aliasing");
+		GridBagConstraints gbc_antialiasingCheck = new GridBagConstraints();
+		gbc_antialiasingCheck.gridwidth = 2;
+		gbc_antialiasingCheck.anchor = GridBagConstraints.NORTHWEST;
+		gbc_antialiasingCheck.insets = new Insets(0, 0, 5, 0);
+		gbc_antialiasingCheck.gridx = 1;
+		gbc_antialiasingCheck.gridy = 4;
+		contentPane.add(antialiasingCheck, gbc_antialiasingCheck);
 		
 		backButton = new JButton("Back");
-		
-		ButtonGroup musicSettings = new ButtonGroup();
-		musicSettings.add(musicOff);
-		musicSettings.add(musicOn);
-		ButtonGroup soundSettings = new ButtonGroup();
-		soundSettings.add(soundOff);
-		soundSettings.add(soundOn);
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(10)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblMusic)
-							.addGap(60)
-							.addComponent(musicOn)
-							.addGap(2)
-							.addComponent(musicOff))
-						.addComponent(lblGraphics)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblSound)
-							.addPreferredGap(ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-							.addComponent(soundOn)
-							.addGap(2)
-							.addComponent(soundOff)
-							.addContainerGap())
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(shadowsCheck)
-							.addComponent(antialiasingCheck))
-						.addComponent(lblSettings, GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)))
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-					.addContainerGap(43, Short.MAX_VALUE)
-					.addComponent(backButton, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
-					.addGap(32))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.CENTER)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(lblSettings)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(6)
-							.addComponent(lblSound))
-						.addComponent(soundOn)
-						.addComponent(soundOff))
-					.addGap(3)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(4)
-							.addComponent(lblMusic))
-						.addComponent(musicOn)
-						.addComponent(musicOff))
-					.addGap(7)
-					.addComponent(lblGraphics)
-					.addGap(2)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(shadowsCheck)
-						.addComponent(antialiasingCheck))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(backButton)
-					.addGap(11))
-		);
-		contentPane.setLayout(gl_contentPane);
+		GridBagConstraints gbc_backButton = new GridBagConstraints();
+		gbc_backButton.anchor = GridBagConstraints.NORTH;
+		gbc_backButton.insets = new Insets(0,10,0,10);
+		gbc_backButton.fill = GridBagConstraints.HORIZONTAL;
+		gbc_backButton.gridwidth = 3;
+		gbc_backButton.gridx = 0;
+		gbc_backButton.gridy = 5;
+		contentPane.add(backButton, gbc_backButton);
 		pack();
 	}
 	public void setSettingsInitialState(Boolean musicState, Boolean soundState, Boolean shadowState, Boolean antialiasingState) {
