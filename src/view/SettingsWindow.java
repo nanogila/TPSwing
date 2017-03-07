@@ -14,7 +14,11 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
+/**
+ * View class for the settings window
+ */
 public class SettingsWindow extends JFrame {
+
 JRadioButton soundOn;
 JRadioButton soundOff;
 JRadioButton musicOn;
@@ -141,6 +145,17 @@ JButton backButton;
 		contentPane.add(backButton, gbc_backButton);
 		pack();
 	}
+	/**
+	 * method for setting the initial state of the controls in the window, in order to mantain previous setting choices
+	 * @param musicState
+	 * Boolean indicating if music setting is enabled or not
+	 * @param soundState
+	 * Boolean indicating if sound is enabled or not
+	 * @param shadowState
+	 * Boolean indicating if shadows are enabled or not
+	 * @param antialiasingState
+	 * Boolean indicating if anti-aliasing is enabled or not
+	 */
 	public void setSettingsInitialState(Boolean musicState, Boolean soundState, Boolean shadowState, Boolean antialiasingState) {
 		musicOn.setSelected(musicState);
 		soundOn.setSelected(soundState);
@@ -149,24 +164,59 @@ JButton backButton;
 		shadowsCheck.setSelected(shadowState);
 		antialiasingCheck.setSelected(antialiasingState);
 	}
+	/**
+	 * Method to add a listener to musicOn toggle
+	 * @param musicOnAction
+	 * an ActionListener to link to this toggle
+	 */
 	public void setMusicOnRadioBtnActions(ActionListener musicOnAction) {
 		musicOn.addActionListener(musicOnAction);
 	}
+	/**
+	 * Method to add a listener to musicOff toggle
+	 * @param musicOffAction
+	 * an ActionListener to link to this toggle
+	 */
 	public void setMusicOffRadioBtnActions(ActionListener musicOffAction) {
 		musicOff.addActionListener(musicOffAction);
 	}
+	/**
+	 * Method to add a listener to soundOn toggle
+	 * @param soundOnAction
+	 * an ActionListener to link to this toggle
+	 */
 	public void setSoundOnRadioBtnActions(ActionListener soundOnAction) {
 		soundOn.addActionListener(soundOnAction);
 	}
+	/**
+	 * Method to add a listener to soundOff toggle
+	 * @param soundOffAction
+	 * an ActionListener to link to this toggle
+	 */
 	public void setSoundOffRadioBtnActions(ActionListener soundOffAction) {
 		soundOff.addActionListener(soundOffAction);
 	}
+	/**
+	 *  Method to add a listener to antialiasingCheck toggle
+	 * @param antialiasingAction
+	 * an ActionListener to link to this toggle
+	 */
 	public void setAntialiasingCheckActions(ActionListener antialiasingAction) {
 		antialiasingCheck.addActionListener(antialiasingAction);
 	}
+	/**
+	 *  Method to add a listener to shadowsCheck toggle
+	 * @param shadowsAction
+	 * an ActionListener to link to this toggle
+	 */
 	public void setShadowsCheckActions(ActionListener shadowsAction) {
 		shadowsCheck.addActionListener(shadowsAction);
 	}
+	/**
+	 *  Method to add a listener to back button
+	 * @param backButtonAction
+	 * an ActionListener to link to this toggle
+	 */
 	public void setBackButtonActions(ActionListener backButtonAction) {
 		backButton.addActionListener(backButtonAction);
 	}

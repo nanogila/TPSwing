@@ -19,6 +19,10 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
+/**
+ * View class for the main menu window
+ *
+ */
 public class MainWindow extends JFrame{
 	private JPanel contentPane;
 	JButton startGameButton;
@@ -87,12 +91,25 @@ public class MainWindow extends JFrame{
 		contentPane.add(exitButton, gbc_exitButton);
 		pack();
 	}
+	/**Method to add a listener to the exit button
+	 * @param exitButtonAction
+	 * an ActionListener to link to this button
+	 */
 	public void addExitListener(ActionListener exitButtonAction) {
 		exitButton.addActionListener(exitButtonAction);
 	}
+	
+	/** Method to add a listener to the start game button
+	 * @param startGameButtonAction
+	 * an ActionListener to link to this button
+	 */
 	public void addStartGameListener(ActionListener startGameButtonAction) {
 		startGameButton.addActionListener(startGameButtonAction);
 	}
+	/** Method to add a listener to the settings button
+	 * @param setingsButtonAction
+	 * an ActionListener to link to this button
+	 */
 	public void addSettingsListener(ActionListener settingsButtonAction) {
 		settingsButton.addActionListener(settingsButtonAction);
 	}
