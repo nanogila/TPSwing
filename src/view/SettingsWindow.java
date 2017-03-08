@@ -19,13 +19,13 @@ import java.awt.Insets;
  */
 public class SettingsWindow extends JFrame {
 
-JRadioButton soundOn;
-JRadioButton soundOff;
-JRadioButton musicOn;
-JRadioButton musicOff;
-JCheckBox shadowsCheck;
-JCheckBox antialiasingCheck;
-JButton backButton;
+	private JRadioButton soundOn;
+	private JRadioButton soundOff;
+	private JRadioButton musicOn;
+	private JRadioButton musicOff;
+	private JCheckBox shadowsCheck;
+	private JCheckBox antialiasingCheck;
+	private JButton backButton;
 	private JPanel contentPane;
 	public SettingsWindow() {
 		setResizable(false);

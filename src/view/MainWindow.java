@@ -25,9 +25,9 @@ import java.awt.Insets;
  */
 public class MainWindow extends JFrame{
 	private JPanel contentPane;
-	JButton startGameButton;
-	JButton settingsButton;
-	JButton exitButton;
+	private JButton startGameButton;
+	private JButton settingsButton;
+	private JButton exitButton;
 	public MainWindow() {
 		setResizable(false);
 		setTitle("Main Menu");

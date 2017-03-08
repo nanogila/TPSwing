@@ -1,10 +1,10 @@
 package model;
 
 public class Model {
-Boolean sound;
-Boolean music;
-Boolean shadows;
-Boolean antialiasing;
+	private Boolean sound;
+	private Boolean music;
+	private Boolean shadows;
+	private Boolean antialiasing;
 public Model() {
 	sound = true;
 	music = false;

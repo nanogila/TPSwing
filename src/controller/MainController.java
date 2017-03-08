@@ -44,6 +44,7 @@ class SettingsListener implements ActionListener {
 	}
 	
 }
+
 /**
  * Listener class for start game buttton 
  *
@@ -51,7 +52,8 @@ class SettingsListener implements ActionListener {
 class StartGameListener implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		new GameController(actions);
+		display.dispose();
 	}
 	
 }

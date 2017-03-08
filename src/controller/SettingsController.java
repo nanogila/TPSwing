@@ -8,8 +8,8 @@ import model.Model;
 import view.SettingsWindow;
 
 public class SettingsController {
-Model actions;
-SettingsWindow view;
+	private Model actions;
+	private SettingsWindow view;
 	/**
 	 * Controller class for the settings window
 	 * @param actions
